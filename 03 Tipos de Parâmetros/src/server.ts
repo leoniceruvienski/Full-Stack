@@ -13,3 +13,4 @@ app.get('/users', (request, response) => {
     console.log(query)
     return response.json({})
 })
+//teste
