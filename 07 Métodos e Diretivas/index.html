@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello {{ name }}</h1>
+        <button @click="showName">Botão</button>
+        <div v-for="user in users" @click="showName(user.name)">
+           <!-- diretivas v-for, para realizar lupens e @click para escutar eventos-->
+            <h2>  {{ user.name }} </h2>
+        </div>
+    </div>
+
+    <script>
+        //Métodos & Diretivas
+        var app = Vue.createApp({
+            data() {
+                return {
+                    name: 'Leonice',
+                    users: [{ name: 'Leonice' }, { name:'Ronaldo'}, {name:'Júlia'}]
+                }
+            },
+            methods: {
+                showName(name) {
+                    alert(name)
+                },
+            },
+        })
+        var vm = app.mount('#app')
+    </script>
+</body>
+</html>
